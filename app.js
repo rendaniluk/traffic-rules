@@ -11,19 +11,22 @@ body.onkeydown = function(e){
     //up arrow    : 38
     //down arrow  : 40
 
-    console.log(e.keyCode);
     displayMessage(e.keyCode);
 
-    if (e.keyCode === 39){
-        taxiPositionCounter++
-    }
-    else if (e.keyCode === 37){
-        taxiPositionCounter--;
-    }
+    // to move the taxi forward...
+    // when the right arrow is pressed
+    //work with `taxiPositionCounter`
 
-    displayMessage(taxiPositionCounter);
+    // call `calculateTaxiLocation` to get a taxi location className store it in a variable.
+    // increment the `taxiPositionCounter`
+    // call `calculateTaxiLocation` to the new a taxi location className store it in another variable.
 
-    // make the taxi move
+    //pass both to the `moveTaxi( firstClassName, secondClassName)` function
+    //
+
+    var tl = new TrafficLight(2);
+    
+    tl.orange();
 
 
 };
