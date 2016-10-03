@@ -30,9 +30,12 @@ Everything we do is based on this variable that increments or decrements based o
 
 ##To move the taxi forward:
 
-1. Get your current location class name based on the `taxiLocationCounter` variable
-2. Increment the counter variable
-3. Get the next location class name
+When the left arrow is pressed.
+
+1. Get your current location class name based on the `taxiLocationCounter` variable call the `calculateTaxiLocation` function with it as a parameter.
+Like this `calculateTaxiLocation(taxiLocationCounter)` store the result in a variable.
+2. Increment the counter variable.
+3. Get the next location class name as above.
 4. Pass both class names to the `moveTaxi` function based on the new value of the counter.
 
 What do you expect to happen?
