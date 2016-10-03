@@ -43,7 +43,7 @@ What happened?
 
 ## The traffic lights
 
-You are also provided with a TrafficLight constructor function, it takes the index of a TrafficLight it controls on instantiation.
+You are also provided with a TrafficLight constructor function, it takes the index of a TrafficLight it controls on instantiation. It controls the lights on the TrafficLight it's configured for.
 
 For example:
 
@@ -58,13 +58,15 @@ For example:
     trafficLight.orange();
 
     //get the current color of the traffic light
-    trafficLight.color // returns 'red', 'green' or 'orange'
+    trafficLight.color(); // returns 'red', 'green' or 'orange'
 
 ```
 
+Try it out.
+
 ## Stop at red lights
 
-Use the `taxiLocationCounter` and find the Traffic Light closest to the taxi. Use the `up` and `down` arrows to change it to red (up) or green (down). If the light is red the taxi should not be able to move forward. Only after the light was changed to green using the down arrow, the taxi should be able to move forward.
+Use the `taxiLocationCounter` and find the TrafficLight closest to the taxi. Use the `up` and `down` arrows to change it to red (up) or green (down). If the light is red the taxi should not be able to move forward. Only after the light was changed to green using the down arrow, the taxi should be able to move forward.
 
 ## Final touches
 
