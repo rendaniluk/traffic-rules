@@ -61,7 +61,7 @@ For example:
     trafficLight.orange();
 
     //get the current color of the traffic light
-    trafficLight.color(); // returns 'red', 'green' or 'orange'
+    trafficLight.state(); // returns 'red', 'green' or 'orange'
 
 ```
 
