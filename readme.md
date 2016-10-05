@@ -24,7 +24,7 @@ Some CSS for the taxi position and the colour of the traffic light
 - Each location of the taxi has a different class
 - CSS class names determine the colour of the light
 
-All of the above is controlled by a counter, we will call this variable `taxiLocationCounter`
+All of the above is controlled by a counter variable, we will call this variable `taxiLocationCounter`
 
 Everything we do is based on this variable that increments or decrements based on the key's pressed.
 
@@ -32,11 +32,9 @@ Everything we do is based on this variable that increments or decrements based o
 
 When the left arrow is pressed.
 
-1. Get your current location class name based on the `taxiLocationCounter` variable call the `calculateTaxiLocation` function with it as a parameter.
-Like this `calculateTaxiLocation(taxiLocationCounter)` store the result in a variable.
-2. Increment the counter variable.
-3. Get the next location class name as above.
-4. Pass both class names to the `moveTaxi` function based on the new value of the counter.
+1. Store the current value of `taxiLocationCounter` in a new variable for called `previousLocationCounter`.
+2. Increment the value of `taxiLocationCounter` by one.
+4. Call the `moveTaxi` function like this  `moveTaxi(previousLocationCounter, taxiLocationCounter)`.
 
 What do you expect to happen?
 

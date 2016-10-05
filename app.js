@@ -2,7 +2,7 @@
 //find the body tag and store it in a variable called 'body'
 var body = document.querySelector("body");
 
-var taxiPositionCounter = 1;
+var taxiLocationCounter = 1;
 
 body.onkeydown = function(e){
 
@@ -13,20 +13,22 @@ body.onkeydown = function(e){
 
     displayMessage(e.keyCode);
 
-    // to move the taxi forward...
-    // when the right arrow is pressed
-    //work with `taxiPositionCounter`
+    /*
 
-    // call `calculateTaxiLocation` to get a taxi location className store it in a variable.
-    // increment the `taxiPositionCounter`
-    // call `calculateTaxiLocation` to the new a taxi location className store it in another variable.
+    to move the taxi forward...
+    when the right arrow is pressed
+    work with `taxiLocationCounter`
 
-    //pass both to the `moveTaxi( firstClassName, secondClassName)` function
-    //
+    store the value of `taxiLocationCounter` in a variable called `previousLocationCounter`
+    increment the `taxiLocationCounter`
 
+    pass both to the `moveTaxi( previousLocationCounter,
+        taxiLocationCounter)` function
+
+    */
+
+    // to make the second TrafficLight `Orange`
     var tl = new TrafficLight(2);
-    
     tl.orange();
-
 
 };

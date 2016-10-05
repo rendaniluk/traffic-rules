@@ -40,7 +40,11 @@ var displayQueueCount = function(val){
     q.innerHTML = val;
 };
 
-var moveTaxi = function(from, to) {
+var moveTaxi = function(fromIndex, toIndex) {
+
+    var from = calculateTaxiLocation(fromIndex),
+        to = calculateTaxiLocation(toIndex);
+
     var taxi = document.querySelector('.taxi');
     taxi.classList.remove(from);
     taxi.classList.add(to);
