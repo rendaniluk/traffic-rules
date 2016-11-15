@@ -3,32 +3,44 @@
 var body = document.querySelector("body");
 
 var taxiLocationCounter = 1;
-
+var previousLocationCounter = 0;
 body.onkeydown = function(e){
-
-    //right arrow : 39
-    //left arrow  : 37
-    //up arrow    : 38
-    //down arrow  : 40
+  var trafficlight = new TrafficLight(taxiLocationCounter);
 
     displayMessage(e.keyCode);
-
-    /*
-
-    to move the taxi forward...
-    when the right arrow is pressed
-    work with `taxiLocationCounter`
-
-    store the value of `taxiLocationCounter` in a variable called `previousLocationCounter`
-    increment the `taxiLocationCounter`
-
-    pass both to the `moveTaxi( previousLocationCounter,
-        taxiLocationCounter)` function
-
-    */
-
+    //when keyCode 39 is pressed taxi move forward
+        if(e.keyCode == 39){
+            if(trafficlight.state() === 'green'){
+                previousLocationCounter = taxiLocationCounter;
+              taxiLocationCounter++;
+              //allowing taxi to wrap arround when reach position 9
+              if(taxiLocationCounter>9){
+                taxiLocationCounter=1;
+              }
+              //calling the moveTaxi function from support.js file
+              //with parameters previousLocationCounter and taxiLocationCounter
+              moveTaxi(previousLocationCounter,taxiLocationCounter);
+                }
+                //reversing the taxi
+            }else if (e.keyCode == 37) {
+                previousLocationCounter=taxiLocationCounter;
+                  taxiLocationCounter--;
+              //when reversing it allows taxi to wrap arround when reach location 1    
+                  if(taxiLocationCounter<1){
+                    taxiLocationCounter=9;
+                  }
+              //calling the moveTaxi function from support.js file
+              //with parameters previousLocationCounter and taxiLocationCounter
+              moveTaxi(previousLocationCounter,taxiLocationCounter);
+              //changing traffic light to red
+            }else if (e.keyCode == 38){
+              trafficlight.red();
+              //changing traffic light to green
+            }else if (e.keyCode == 40) {
+              trafficlight.green()
+            }
     // to make the second TrafficLight `Orange`
-    var tl = new TrafficLight(2);
-    tl.orange();
+    //var tl = new TrafficLight(3);
+    //tl.orange();
 
 };
